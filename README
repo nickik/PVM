@@ -5,3 +5,11 @@ Usecases:
 - A way to test the bytecode design
 - Test compiler output
 - Abstract some of the low level problems like how to map VM registers to PIC Registers and Memory
+
+Links:
+
+PICAXE-BASIC Language-Definition
+    http://www.picaxe.com/BASIC-Commands/
+    
+PIC18F13K50 Datasheet
+    http://www.microchip.com/wwwproducts/Devices.aspx?dDocName=en533925#1
