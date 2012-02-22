@@ -1,0 +1,7 @@
+The Goal of this Project is to write a Prototype of an VM that will later run on a PIC Prozessor. The Prototype will be written in Python.
+
+Usecases:
+
+- A way to test the bytecode design
+- Test compiler output
+- Abstract some of the low level problems like how to map VM registers to PIC Registers and Memory
