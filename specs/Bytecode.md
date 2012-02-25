@@ -143,26 +143,27 @@ Kopiert einen Wert in die Destination-Adresse.
 Instruktionslänge: 3 Byte.
 
     +--------+--------+ +----------------+ +----------------+
-    | OPCODE |SRC-TYPE| |     SOURCE     | |   DESTINATION  |
+    | OPCODE |  TYPE  | |     SOURCE     | |   DESTINATION  |
     |  4bit  |  4bit  | |      8bit      | |      8bit      |
     +--------+--------+ +----------------+ +----------------+
 
-Dabei wird im SRC-TYPE spezifiert, wie der SOURCE-Wert zu interpetieren ist:
+Dabei wird in TYPE spezifiert, wie die SOURCE-Wert und DESTINATION-Werte zu
+interpetieren sind:
 
-    Binär     Hex     Wert         Beschreibung
-    -----     ---     ----         ------------
-    0000      0       MEMORY       SOURCE ist eine Memory-Adresse
-    0001      1       IMMEDIATE    SOURCE ist ein Immediate-Wert
-    0010      2       POINTER      SOURCE ist eine Memory-Adresse die einen Pointer enthält.
+    Binär   Hex   Wert          Beschreibung
+    -----   ---   ----          ------------
+    00 00   0     MM            Memory    zu Memory
+    01 00   4     IM            Immediate zu Memory
+    10 00   8     PM            Pointer   zu Memory
 
-Handelt es sich bei SOURCE um eine Memory-Adresse wird der Wert aus dieser Adresse
-ausgelesen und in DESTINATION gespeichert.
+    00 10   2     MP            Memory    zu Pointer
+    01 10   6     IP            Immediate zu Pointer
+    10 10   A     PP            Pointer   zu Pointer
 
-Ist SOURCE eine Zahlenkonstante (Immediate) wird diese Zahl in DESTINATION gespeichert.
-
-Im dritten Falle, wenn es sich bei SOURCE um einen Pointer handelt, so bezeichnet
-SOURCE eine Memory-Adresse, deren Wert als Pointer interpretiert wird. Dieser
-Pointer wird dereferenziert und der erhaltene Wert in DESTINATION gespeichert.
+Memory bezeichnet, dass es sich Quelle bzw. Ziel um eine Speicheradresse handelt.
+Immediate bezeichnet, dass es sich bei der Quelle um eine Zahlenkonstante handelt.
+Pointer bezeichnet eine Speicherzelle, die eine Adresse enthält, welche auf die
+Quell- bzw. Zieladresse zeigt.
 
 MOVN
 ----
