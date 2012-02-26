@@ -45,13 +45,13 @@ def set_bits(bytearr, start, end, value):
 
         value = value >> 8
 
-def generate_opmore(op, params):
+def generate_opmore(op):
     if op not in bytecode.moreops:
         raise OPCodeError("invalid  mnemonic", op)
 
     code = bytearray(1)
-    set_bits(code, 0, 4, bytecode.opcodes['more'])
-    set_bits(code, 4, 8, bytecode.moreops[op])
+    set_bits(code, 0, 3, bytecode.opcodes['more'])
+    set_bits(code, 3, 7, bytecode.moreops[op])
 
     return (code, None)
 
