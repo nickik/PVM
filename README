@@ -1,4 +1,4 @@
-The Goal of this Project is to write a Prototype of an VM that will later run on a PIC Prozessor. The Prototype will be written in Python.
+The Goal of this Project is to write a prototype of an VM that will later run on a PIC microcontroller. The prototype will be written in Python.
 
 Usecases:
 
@@ -8,8 +8,8 @@ Usecases:
 
 Links:
 
-PICAXE-BASIC Language-Definition
-    http://www.picaxe.com/BASIC-Commands/
+BASIC-Stamp Language Definition
+    http://www.parallax.com/tabid/440/Default.aspx
     
 PIC18F13K50 Datasheet
     http://www.microchip.com/wwwproducts/Devices.aspx?dDocName=en533925#1
